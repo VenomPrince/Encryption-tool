@@ -1,6 +1,6 @@
 
    VenomPrince - Encryption-tool 
-<p align="center"> <img src="https://github.com/VenomPrince/Encryption-tool/blob/main/ET.png" width="300" height="120"> </p> <p align="center"> <img src="https://img.shields.io/badge/Version-2.0-brightgreen"> <a href="https://github.com/VenomPrince"> <img src="https://img.shields.io/github/followers/th3unkn0n?label=Follow&style=social"> </a> <a href="https://github.com/VenomPrince/Encryption-tool/stargazers"> <img src="https://img.shields.io/github/stars/VenomPrince/Encryption-tool?style=social"> </a> </p> <p align="center"> Encryption-tool </p>
+<p align="center"> <img src="https://github.com/VenomPrince/Encryption-tool/blob/main/ET.png" width="300" height="120"> </p> <p align="center"> <img src="https://img.shields.io/badge/Version-2.0-brightgreen"> <a href="https://github.com/VenomPrince"> <img src="https://img.shields.io/github/followers/VenomPrince?label=Follow&style=social"> </a> <a href="https://github.com/VenomPrince/Encryption-tool/stargazers"> <img src="https://img.shields.io/github/stars/VenomPrince/Encryption-tool?style=social"> </a> </p> <p align="center"> Encryption-tool </p>
 
 Features
 
