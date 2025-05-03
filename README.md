@@ -1,7 +1,7 @@
 
 # Encryption-tool
 
-                   ![image](https://github.com/user-attachments/assets/49d5c9e3-a3ec-4c67-a67a-5eec666db4f0)
+   ![image](https://github.com/user-attachments/assets/49d5c9e3-a3ec-4c67-a67a-5eec666db4f0)
 
 A simple and efficient command-line tool for encrypting and decrypting text using various encryption algorithms.
 ## Features
