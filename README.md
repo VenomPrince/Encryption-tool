@@ -1,7 +1,8 @@
 
-# Encryption-tool
+   VenomPrince - Encryption-tool 
+<p align="center"> <img src="https://github.com/VenomPrince/Encryption-tool/blob/main/ET.png" width="300" height="120"> </p> <p align="center"> <img src="https://img.shields.io/badge/Version-2.0-brightgreen"> <a href="https://github.com/VenomPrince"> <img src="https://img.shields.io/github/followers/th3unkn0n?label=Follow&style=social"> </a> <a href="https://github.com/VenomPrince/Encryption-tool/stargazers"> <img src="https://img.shields.io/github/stars/VenomPrince/Encryption-tool?style=social"> </a> </p> <p align="center"> Encryption-tool </p>
 
-   ![image](https://github.com/user-attachments/assets/49d5c9e3-a3ec-4c67-a67a-5eec666db4f0)
+Features
 
 A simple and efficient command-line tool for encrypting and decrypting text using various encryption algorithms.
 ## Features
