@@ -1,4 +1,4 @@
-#include "include/MorseCodeCipher.h"
+#include "MorseCodeCipher.h"
 
 MorseCodeCipher::MorseCodeCipher() {
     charToMorse = {

@@ -1,4 +1,4 @@
-#include "include/CipherAlgorithm.h"
+#include "CipherAlgorithm.h"
 #include <iostream>
 
 std::string CipherAlgorithm::encrypt(const std::string& plaintext) {

@@ -1,4 +1,4 @@
-#include "include/VigenereCipher.h"
+#include "VigenereCipher.h"
 #include <iostream>
 #include <string>
 #include <cctype>

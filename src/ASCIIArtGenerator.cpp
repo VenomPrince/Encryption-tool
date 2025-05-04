@@ -1,4 +1,4 @@
-#include "include/ASCIIArtGenerator.h"
+#include "ASCIIArtGenerator.h"
 #include <iostream>
 
 void ASCIIArtGenerator::displayBanner() {
@@ -7,10 +7,10 @@ void ASCIIArtGenerator::displayBanner() {
     std::cout << " | ____|_ __   ___ _ __ _   _ _ __ | |_(_) ___  _ __   |_   _|__   ___ | |\n";
     std::cout << " |  _| | '_ \\ / __| '__| | | | '_ \\| __| |/ _ \\| '_ \\    | |/ _ \\ / _ \\| |\n";
     std::cout << " | |___| | | | (__| |  | |_| | |_) | |_| | (_) | | | |   | | (_) | (_) | |\n";
-    std::cout << " |_____|_ |_|\\___|_|   \\__, | .__/ \\__|_|\\___/|_| |_|   |_|\\___/ \\___/|_|\n";
+    std::cout << " |_____|_  |_|\\___|_|   \\__, | .__/ \\__|_|\\___/|_| |_|   |_|\\___/ \\___/|_|\n";
     std::cout << "                        |___/|_|                                                \n";
     std::cout << "\033[0m";
-    std::cout << " \n                                                          Encryption Tool v2.0\n";
+    std::cout << " \n                                                          Encryption Tool v3.0\n";
     std::cout << "\033[1;34m";
     std::cout << " \n                                         Created By Prince, Ashes, and Nishant\n";
     std::cout << "\033[0m";

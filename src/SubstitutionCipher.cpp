@@ -1,4 +1,4 @@
-#include "include/SubstitutionCipher.h"
+#include "SubstitutionCipher.h"
 #include <algorithm>
 #include <cctype>
 
