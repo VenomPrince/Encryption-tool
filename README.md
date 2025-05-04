@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <em>Your ultimate command-line toolkit for military-grade encryption</em> 🔒
+  <em>Your ultimate command-line toolkit for encryption</em> 🔒
 </p>
 
 ---
