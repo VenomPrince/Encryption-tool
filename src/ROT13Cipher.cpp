@@ -19,9 +19,9 @@ void ROT13Cipher::setKey(const std::string& key) {
 }
 
 std::string ROT13Cipher::getDescription() const {
-    return "ROT13: A simple letter substitution cipher that replaces each letter with the letter 13 positions after it.";
+    return "\033[1;34mROT13:\033[0m A simple letter substitution cipher that replaces each letter with the letter 13 positions after it.";
 }
 
 std::string ROT13Cipher::getKeyInstructions() const {
-    return "ROT13 doesn't require a key. Press Enter to continue.";
+    return "\033[1;34mROT13 doesn't require a key. Press Enter to continue.\033[0m ";
 }

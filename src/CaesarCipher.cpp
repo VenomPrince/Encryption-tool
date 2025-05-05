@@ -27,10 +27,12 @@ void CaesarCipher::setKey(const std::string& key) {
     }
 }
 
+#include <iostream>
+
 std::string CaesarCipher::getDescription() const {
-    return "Caesar Cipher: A simple substitution cipher where each letter is shifted by a fixed number of positions in the alphabet.";
+    return "\033[1;34mCaesar Cipher:\033[0m A simple substitution cipher where each letter is shifted by a fixed number of positions in the alphabet.";
 }
 
 std::string CaesarCipher::getKeyInstructions() const {
-    return "Enter a number between 1 and 25 to specify the shift value.";
+    return "\033[1;32mEnter a number between 1 and 25\033[0m to specify the shift value.";
 }

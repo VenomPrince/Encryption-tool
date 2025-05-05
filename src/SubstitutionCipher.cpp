@@ -67,7 +67,7 @@ void SubstitutionCipher::setKey(const std::string& key) {
 }
 
 std::string SubstitutionCipher::getDescription() const {
-    return "Substitution Cipher: Each letter is replaced with another letter according to a fixed mapping.";
+    return "\033[1;34mSubstitution Cipher:\033[0m Each letter is replaced with another letter according to a fixed mapping.";
 }
 
 std::string SubstitutionCipher::getKeyInstructions() const {

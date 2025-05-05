@@ -65,9 +65,9 @@ void MorseCodeCipher::setKey(const std::string& key) {
 }
 
 std::string MorseCodeCipher::getDescription() const {
-    return "Morse Code: Converts text to dots and dashes according to international Morse code.";
+    return "\033[1;34mMorse Code:\033[0m Converts text to dots and dashes according to international Morse code.";
 }
 
 std::string MorseCodeCipher::getKeyInstructions() const {
-    return "Enter a separator character/string for Morse code symbols (default is space).";
+    return "\033[1;32mEnter a separator character/string for Morse code symbols (default is space).\033[0m";
 }

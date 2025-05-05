@@ -48,7 +48,7 @@ void VigenereCipher::setKey(const std::string& newKey) {
 }
 
 std::string VigenereCipher::getDescription() const {
-    return "Vigenère Cipher: A method of encrypting text using a series of different Caesar ciphers based on the letters of a keyword.";
+    return "\033[1;34mVigenère Cipher:\033[0m A method of encrypting text using a series of different Caesar ciphers based on the letters of a keyword.";
 }
 
 std::string VigenereCipher::getKeyInstructions() const {
