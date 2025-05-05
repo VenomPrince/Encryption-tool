@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.0-brightgreen">
+  <img src="https://img.shields.io/badge/Version-3.0-brightgreen">
   <a href="https://github.com/VenomPrince">
     <img src="https://img.shields.io/github/followers/VenomPrince?label=Follow&style=social">
   </a>
