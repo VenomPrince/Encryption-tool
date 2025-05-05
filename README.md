@@ -1,85 +1,136 @@
+# 🔐 VenomPrince - Encryption Tool 
 
-   VenomPrince - Encryption-tool 
-<p align="center"> <img src="https://github.com/VenomPrince/Encryption-tool/blob/main/ET.png" width="300" height="120"> </p> <p align="center"> <img src="https://img.shields.io/badge/Version-2.0-brightgreen"> <a href="https://github.com/VenomPrince"> <img src="https://img.shields.io/github/followers/VenomPrince?label=Follow&style=social"> </a> <a href="https://github.com/VenomPrince/Encryption-tool/stargazers"> <img src="https://img.shields.io/github/stars/VenomPrince/Encryption-tool?style=social"> </a> </p> <p align="center"> Encryption-tool </p>
+<p align="center">
+  <img src="https://github.com/VenomPrince/Encryption-tool/blob/main/ET.png" width="300" height="120">
+</p>
 
-Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-2.0-brightgreen">
+  <a href="https://github.com/VenomPrince">
+    <img src="https://img.shields.io/github/followers/VenomPrince?label=Follow&style=social">
+  </a>
+  <a href="https://github.com/VenomPrince/Encryption-tool/stargazers">
+    <img src="https://img.shields.io/github/stars/VenomPrince/Encryption-tool?style=social">
+  </a>
+  <img src="https://img.shields.io/badge/C++-14-blue">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+</p>
 
-A simple and efficient command-line tool for encrypting and decrypting text using various encryption algorithms.
-## Features
+<p align="center">
+  <em>Your ultimate command-line toolkit for encryption</em> 🔒
+</p>
 
-- **Multiple Encryption Algorithms**: Supports Caesar Cipher and Vigenère Cipher.
-- **User-Friendly Interface**: Simple command-line interface for ease of use.
-- **Customizable Options**: Allows users to specify keys and input text for encryption or decryption.
+---
 
-## Algorithms
+## 🌟 Features
 
-### Caesar Cipher
-A substitution cipher that shifts characters in the plaintext by a fixed number of positions in the alphabet.
+### 🔐 Encryption Algorithms
+| Algorithm | Type | Key | Description |
+|-----------|------|-----|-------------|
+| 🏛 Caesar Cipher | Substitution | Number (1-25) | Shifts letters by fixed positions |
+| 🔑 Vigenère Cipher | Polyalphabetic | Text keyword | Uses keyword for variable shifts |
+| 🔠 Substitution Cipher | Alphabet mapping | Custom alphabet | Replaces each letter with another |
+| 📡 Morse Code | Encoding | Separator char | Converts text to Morse code |
+| 🔄 ROT13 | Special Caesar | None | Rotates letters by 13 positions |
 
-### Vigenère Cipher
-A polyalphabetic substitution cipher that uses a keyword to determine the shift for each character in the plaintext.
+### 💼 Password Manager
+- Securely stores encrypted passwords
+- Retrieves and decrypts passwords when needed
+- Lists all stored credentials
+- Delete password entries
 
-## Prerequisites
+### 🛠 Additional Tools
+- 🔍 Password Strength Analyzer
+- 🎲 Secure Password Generator
+- 📁 File encryption/decryption
+- ✨ ASCII Art Interface
 
-Ensure you have the following installed on your system:
-- A C++ compiler (e.g., `g++`).
-- A terminal or command prompt.
+---
 
-## Usage
+## 🚀 Quick Start
 
-### Build
+### Prerequisites
+- C++14 compiler (g++ recommended)
+- Linux/macOS/Windows terminal
 
-To build the project, navigate to the project directory and run the following command:
-
+### Installation
 ```bash
-g++ -o encryption-tool Encryption-tool.cpp
+git clone https://github.com/VenomPrince/Encryption-tool.git
+cd Encryption-tool
+g++ -std=c++14 -Iinclude src/*.cpp main.cpp -o EncryptionTool
 ```
 
-This will generate an executable file named `encryption-tool`.
 
-### Run
-
-To use the tool, execute the following command:
-
+Running the Tool
 ```bash
-./encryption-tool
+./EncryptionTool
 ```
+🎮 Usage Examples
+Encrypting a Message (Caesar Cipher)
 
-Follow the on-screen prompts to select an encryption algorithm, provide the necessary inputs, and perform encryption or decryption.
+    Select "Encrypt a message"
 
-### Example
+    Choose Caesar Cipher
 
-#### Encrypting with Caesar Cipher
+    Enter shift value (e.g., 3)
 
-1. Select the Caesar Cipher option.
-2. Enter the plaintext (e.g., `HELLO`).
-3. Provide the shift value (e.g., `3`).
-4. The tool will output the encrypted text (e.g., `KHOOR`).
+    Input your message: "ATTACK AT DAWN"
 
-#### Decrypting with Vigenère Cipher
+    Get ciphertext: "DWWDFN DW GDZQ"
 
-1. Select the Vigenère Cipher option.
-2. Enter the ciphertext (e.g., `RIJVS`).
-3. Provide the keyword (e.g., `KEY`).
-4. The tool will output the decrypted text (e.g., `HELLO`).
+Storing a Password
 
-## File Structure
+    Select "Password Manager"
 
+    Choose "Store new password"
+
+    Enter service: "GitHub"
+
+    Enter username: "VenomPrince"
+
+    Enter password: "MySecret123!"
+
+    Select encryption algorithm
+
+    Password stored securely!
+
+Generating Secure Password
+
+    Select "Generate secure password"
+
+    Choose length (e.g., 16)
+
+    Get generated password: "xQ3!kP8$mL2@nZ9#"
+
+    Optionally store it in Password Manager
+
+🏗 Project Structure
 ```
 Encryption-tool/
-├── Encryption-tool.cpp  # Main source code
-├── README.md            # Documentation
+├── include/              # Header files
+│   ├── *.h              # All algorithm headers
+├── src/                 # Implementation
+│   ├── *.cpp            # Algorithm implementations
+├── main.cpp             # Main application
+├── ET.png               # Project logo
+└── README.md            # You are here :)
 ```
+🤝 Contributing
 
-## Contributing
+We welcome contributions! Here's how:
 
-Contributions are welcome! Feel free to submit issues or pull requests to improve the tool.
+    Fork the project
 
-## License
+    Create your feature branch (git checkout -b cool-new-feature)
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+    Commit your changes (git commit -m 'Add awesome feature')
 
-## Acknowledgments
+    Push to the branch (git push origin cool-new-feature)
 
-Special thanks to the open-source community for inspiration and resources.
+    Open a Pull Request
 
+📜 License
+
+MIT License - See LICENSE for details.
+
+<p align="center"> Made with ❤️ by <a href="https://github.com/VenomPrince">VenomPrince</a> and contributors </p> 
