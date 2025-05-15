@@ -39,11 +39,16 @@ int EncryptionApp::selectAlgorithm() {
     for (size_t i = 0; i < algorithms.size(); ++i) {
         std::cout << i + 1 << ". " << algorithms[i]->getDescription() << "\n";
     }
-    std::cout << "Enter your choice (1-" << algorithms.size() << "): ";
+    std::cout << algorithms.size() + 1 << ". Go back to previous menu\n";
+    std::cout << "Enter your choice (1-" << algorithms.size() + 1 << "): ";
     
     int choice;
     std::cin >> choice;
     std::cin.ignore();
+    
+    if (choice == static_cast<int>(algorithms.size()) + 1) {
+        return -1;  // Special value to indicate going back
+    }
     
     if (choice < 1 || choice > static_cast<int>(algorithms.size())) {
         std::cout << "Invalid choice. Using algorithm 1.\n";
@@ -56,14 +61,31 @@ int EncryptionApp::selectAlgorithm() {
 void EncryptionApp::processMessage(bool isEncryption) {
     int algorithmIndex = selectAlgorithm();
     
+    // Check if user wants to go back
+    if (algorithmIndex == -1) {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
     std::string key;
-    std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key: ";
+    std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key (or type 'back' to go back): ";
     std::getline(std::cin, key);
+    
+    if (key == "back") {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
     algorithms[algorithmIndex]->setKey(key);
     
     std::string message;
-    std::cout << "Enter message: ";
+    std::cout << "Enter message (or type 'back' to go back): ";
     std::getline(std::cin, message);
+    
+    if (message == "back") {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
     
     std::string result;
     if (isEncryption) {
@@ -73,26 +95,55 @@ void EncryptionApp::processMessage(bool isEncryption) {
         result = algorithms[algorithmIndex]->decrypt(message);
         std::cout << "\nDecrypted message: " << result << std::endl;
     }
+    
+    std::cout << "\nPress Enter to continue...";
+    std::cin.get();
 }
 
 void EncryptionApp::processFile(bool isEncryption) {
     int algorithmIndex = selectAlgorithm();
     
+    // Check if user wants to go back
+    if (algorithmIndex == -1) {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
     std::string key;
-    std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key: ";
+    std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key (or type 'back' to go back): ";
     std::getline(std::cin, key);
+    
+    if (key == "back") {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
     algorithms[algorithmIndex]->setKey(key);
     
     std::string inputFile, outputFile;
-    std::cout << "Enter input file path: ";
+    std::cout << "Enter input file path (or type 'back' to go back): ";
     std::getline(std::cin, inputFile);
-    std::cout << "Enter output file path: ";
+    
+    if (inputFile == "back") {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
+    std::cout << "Enter output file path (or type 'back' to go back): ";
     std::getline(std::cin, outputFile);
+    
+    if (outputFile == "back") {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
     
     bool success = algorithms[algorithmIndex]->processFile(inputFile, outputFile, isEncryption);
     if (success) {
         std::cout << "\nFile " << (isEncryption ? "encrypted" : "decrypted") << " successfully." << std::endl;
     }
+    
+    std::cout << "\nPress Enter to continue...";
+    std::cin.get();
 }
 
 void EncryptionApp::displayPasswordMenu() {
@@ -115,18 +166,42 @@ void EncryptionApp::passwordManagerMenu() {
         switch (choice) {
             case 1: {
                 std::string service, username, password;
-                std::cout << "Enter service name: ";
+                std::cout << "Enter service name (or type 'back' to go back): ";
                 std::getline(std::cin, service);
-                std::cout << "Enter username: ";
+                
+                if (service == "back") {
+                    break;
+                }
+                
+                std::cout << "Enter username (or type 'back' to go back): ";
                 std::getline(std::cin, username);
-                std::cout << "Enter password: ";
+                
+                if (username == "back") {
+                    break;
+                }
+                
+                std::cout << "Enter password (or type 'back' to go back): ";
                 std::getline(std::cin, password);
+                
+                if (password == "back") {
+                    break;
+                }
                 
                 int algorithmIndex = selectAlgorithm();
                 
+                // Check if user wants to go back
+                if (algorithmIndex == -1) {
+                    break;
+                }
+                
                 std::string key;
-                std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key: ";
+                std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key (or type 'back' to go back): ";
                 std::getline(std::cin, key);
+                
+                if (key == "back") {
+                    break;
+                }
+                
                 algorithms[algorithmIndex]->setKey(key);
                 
                 std::string encryptedPassword = algorithms[algorithmIndex]->encrypt(password);
@@ -134,12 +209,19 @@ void EncryptionApp::passwordManagerMenu() {
                                           std::to_string(algorithmIndex), key);
                 
                 std::cout << "Password stored successfully!" << std::endl;
+                
+                std::cout << "\nPress Enter to continue...";
+                std::cin.get();
                 break;
             }
             case 2: {
                 std::string service;
-                std::cout << "Enter service name: ";
+                std::cout << "Enter service name (or type 'back' to go back): ";
                 std::getline(std::cin, service);
+                
+                if (service == "back") {
+                    break;
+                }
                 
                 std::string encryptedPassword, algorithmStr, key;
                 if (passwordManager.getPassword(service, encryptedPassword, algorithmStr, key)) {
@@ -152,16 +234,29 @@ void EncryptionApp::passwordManagerMenu() {
                 } else {
                     std::cout << "No password found for " << service << "." << std::endl;
                 }
+                
+                std::cout << "\nPress Enter to continue...";
+                std::cin.get();
                 break;
             }
             case 3:
                 passwordManager.listPasswords();
+                std::cout << "\nPress Enter to continue...";
+                std::cin.get();
                 break;
             case 4: {
                 std::string service;
-                std::cout << "Enter service name to delete: ";
+                std::cout << "Enter service name to delete (or type 'back' to go back): ";
                 std::getline(std::cin, service);
+                
+                if (service == "back") {
+                    break;
+                }
+                
                 passwordManager.deletePassword(service);
+                
+                std::cout << "\nPress Enter to continue...";
+                std::cin.get();
                 break;
             }
             case 5:
@@ -175,17 +270,30 @@ void EncryptionApp::passwordManagerMenu() {
 
 void EncryptionApp::analyzePasswordStrength() {
     std::string password;
-    std::cout << "Enter password to analyze: ";
+    std::cout << "Enter password to analyze (or type 'back' to go back): ";
     std::getline(std::cin, password);
     
+    if (password == "back") {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
     PasswordStrengthAnalyzer::analyzeStrength(password);
+    
+    std::cout << "\nPress Enter to continue...";
+    std::cin.get();
 }
 
 void EncryptionApp::generateSecurePassword() {
     int length;
-    std::cout << "Enter desired password length (8-30 recommended): ";
+    std::cout << "Enter desired password length (8-30 recommended) or 0 to go back: ";
     std::cin >> length;
     std::cin.ignore();
+    
+    if (length == 0) {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
     
     if (length < 1) length = 12;
     
@@ -194,23 +302,51 @@ void EncryptionApp::generateSecurePassword() {
     std::cout << "\nGenerated secure password: " << password << std::endl;
     PasswordStrengthAnalyzer::analyzeStrength(password);
     
-    std::cout << "\nWould you like to store this password? (y/n): ";
+    std::cout << "\nWould you like to store this password? (y/n/b for back): ";
     char choice;
     std::cin >> choice;
     std::cin.ignore();
     
+    if (choice == 'b' || choice == 'B') {
+        std::cout << "Returning to main menu.\n";
+        return;
+    }
+    
     if (choice == 'y' || choice == 'Y') {
         std::string service, username;
-        std::cout << "Enter service name: ";
+        std::cout << "Enter service name (or type 'back' to go back): ";
         std::getline(std::cin, service);
-        std::cout << "Enter username: ";
+        
+        if (service == "back") {
+            std::cout << "Returning to main menu.\n";
+            return;
+        }
+        
+        std::cout << "Enter username (or type 'back' to go back): ";
         std::getline(std::cin, username);
+        
+        if (username == "back") {
+            std::cout << "Returning to main menu.\n";
+            return;
+        }
         
         int algorithmIndex = selectAlgorithm();
         
+        // Check if user wants to go back
+        if (algorithmIndex == -1) {
+            std::cout << "Returning to main menu.\n";
+            return;
+        }
+        
         std::string key;
-        std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key: ";
+        std::cout << algorithms[algorithmIndex]->getKeyInstructions() << "\nEnter key (or type 'back' to go back): ";
         std::getline(std::cin, key);
+        
+        if (key == "back") {
+            std::cout << "Returning to main menu.\n";
+            return;
+        }
+        
         algorithms[algorithmIndex]->setKey(key);
         
         std::string encryptedPassword = algorithms[algorithmIndex]->encrypt(password);
@@ -219,6 +355,9 @@ void EncryptionApp::generateSecurePassword() {
         
         std::cout << "Password stored successfully!" << std::endl;
     }
+    
+    std::cout << "\nPress Enter to continue...";
+    std::cin.get();
 }
 
 void EncryptionApp::run() {
@@ -257,6 +396,8 @@ void EncryptionApp::run() {
                 break;
             default:
                 std::cout << "Invalid choice. Please try again.\n";
+                std::cout << "\nPress Enter to continue...";
+                std::cin.get();
         }
     } while (choice != 8);
 }
