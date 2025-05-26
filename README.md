@@ -1,4 +1,4 @@
-# 🔐 VenomPrince - Encryption Tool 
+# VenomPrince - Encryption Tool 
 
 <p align="center">
   <img src="https://github.com/VenomPrince/Encryption-tool/blob/main/ET.png" width="300" height="120">
@@ -17,37 +17,37 @@
 </p>
 
 <p align="center">
-  <em>Your ultimate command-line toolkit for encryption</em> 🔒
+  <em>Your ultimate command-line toolkit for encryption</em> 
 </p>
 
 ---
 
-## 🌟 Features
+## Features
 
-### 🔐 Encryption Algorithms
+###  Encryption Algorithms
 | Algorithm | Type | Key | Description |
 |-----------|------|-----|-------------|
-| 🏛 Caesar Cipher | Substitution | Number (1-25) | Shifts letters by fixed positions |
-| 🔑 Vigenère Cipher | Polyalphabetic | Text keyword | Uses keyword for variable shifts |
-| 🔠 Substitution Cipher | Alphabet mapping | Custom alphabet | Replaces each letter with another |
-| 📡 Morse Code | Encoding | Separator char | Converts text to Morse code |
-| 🔄 ROT13 | Special Caesar | None | Rotates letters by 13 positions |
+|  Caesar Cipher | Substitution | Number (1-25) | Shifts letters by fixed positions |
+|  Vigenère Cipher | Polyalphabetic | Text keyword | Uses keyword for variable shifts |
+|  Substitution Cipher | Alphabet mapping | Custom alphabet | Replaces each letter with another |
+|  Morse Code | Encoding | Separator char | Converts text to Morse code |
+|  ROT13 | Special Caesar | None | Rotates letters by 13 positions |
 
-### 💼 Password Manager
+###  Password Manager
 - Securely stores encrypted passwords
 - Retrieves and decrypts passwords when needed
 - Lists all stored credentials
 - Delete password entries
 
-### 🛠 Additional Tools
-- 🔍 Password Strength Analyzer
-- 🎲 Secure Password Generator
-- 📁 File encryption/decryption
-- ✨ ASCII Art Interface
+### Additional Tools
+-  Password Strength Analyzer
+-  Secure Password Generator
+-  File encryption/decryption
+-  ASCII Art Interface
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - C++14 compiler (g++ recommended)
@@ -65,7 +65,7 @@ Running the Tool
 ```bash
 ./EncryptionTool
 ```
-🎮 Usage Examples
+ Usage Examples
 Encrypting a Message (Caesar Cipher)
 
     Select "Encrypt a message"
@@ -104,7 +104,7 @@ Generating Secure Password
 
     Optionally store it in Password Manager
 
-🏗 Project Structure
+ Project Structure
 ```
 Encryption-tool/
 ├── include/              # Header files
@@ -129,7 +129,7 @@ We welcome contributions! Here's how:
 
     Open a Pull Request
 
-📜 License
+ License
 
 MIT License - See LICENSE for details.
 
