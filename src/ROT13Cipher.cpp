@@ -1,5 +1,14 @@
 #include "ROT13Cipher.h"
 #include <cctype>
+#include <iostream>
+
+ROT13Cipher::ROT13Cipher() {
+    // Default initialization
+}
+
+ROT13Cipher::ROT13Cipher(const std::string& info) {
+    // Use info for custom initialization
+}
 
 std::string ROT13Cipher::processText(const std::string& text, bool isEncryption) {
     std::string result = text;
@@ -24,4 +33,9 @@ std::string ROT13Cipher::getDescription() const {
 
 std::string ROT13Cipher::getKeyInstructions() const {
     return "\033[1;34mROT13 doesn't require a key. Press Enter to continue.\033[0m ";
+}
+
+std::ostream& operator<<(std::ostream& os, const ROT13Cipher& cipher) {
+    os << cipher.getDescription();
+    return os;
 }
